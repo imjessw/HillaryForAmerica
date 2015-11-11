@@ -25,10 +25,25 @@ $(document).ready(function(){
 
 
 	    $.each(data.events, function(i, evt){
-            content = '<p>' + evt.createdDate + '</p>';
-
+	    	content = '<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
+	    	content += '<p class="mainInfo">' + evt.description + '</p>';
+            content += '<p class="mainInfo">' + evt.createdDate + '</p>';
+            content += '<button class="eventsButton">View Event Details</button>';
             $(content).appendTo(".upcomingEvents");
+
+            $('.eventsButton').on('click',function(){
+            	console.log("bam")
+            	$(".moreDetails").show();
+            });
+            // content = '<h1>' + evt.templateInfo.title + '</h1>'
+
+            // $(content).appendTo(".moreDetails");
+            
+
           });
+	    // $("button").on("click", function(){
+	    // 	console.log("happy")
+	    // })
         
 	}
 
