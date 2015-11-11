@@ -1,13 +1,5 @@
 $(document).ready(function(){
 
-// var hilEvents=["events"]
-// 	$.ajax({
-// 	  dataType: "json",
-// 	  url: "https://s3.amazonaws.com/interview-api-samples/events-results.json",
-// 	  data: hilEvents,
-// 	  success: success
-// 	});
-
 	$.ajax(
 	{
 	    url: 'https://s3.amazonaws.com/interview-api-samples/events-results.json',
@@ -24,21 +16,23 @@ $(document).ready(function(){
 	});
 
 	function hillEvents(data)
-		{
-		    $('#hillEvents').html(data.Date);
-		    console.log(data);
-		}
-
-	// $(".eventsButton").on("click",function(){
-	// 	console.log("success!")
-	// })
+	{
+	    $('#hillEvents').html(data.Date);
+	    console.log(data);
+	    // debugger;
+	    console.log(data.events)
+	    console.log("success");
 
 
+	    $.each(data.events, function(i, evt){
+            content = '<p>' + evt.createdDate + '</p>';
 
+            $(content).appendTo(".upcomingEvents");
+          });
+        
+	}
 
 
 
 }
 );
-
-
