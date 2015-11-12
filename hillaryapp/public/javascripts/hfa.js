@@ -25,25 +25,30 @@ $(document).ready(function(){
 
 
 	    $.each(data.events, function(i, evt){
-	    	content = '<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
-	    	content += '<p class="mainInfo">' + evt.description + '</p>';
-            content += '<p class="mainInfo">' + evt.createdDate + '</p>';
-            content += '<button class="eventsButton">View Event Details</button>';
-            $(content).appendTo(".upcomingEvents");
+	    	var main_info = '<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
+	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
+            main_info += '<p class="mainInfo">' + evt.createdDate + '</p>';
+
+
+            var secondary_info = '<h1 class="">' + 'hello'+ '</h1>'
+            secondary_info += '<p class="hide">' + evt.description + '</p>';
+            secondary_info += '<p class="hide">' + evt.createdDate + '</p>';
+
+            main_info += '<button class="eventsButton">View Event Details</button>';
+            $(main_info).appendTo(".upcomingEvents");
 
             $('.eventsButton').on('click',function(){
             	console.log("bam")
-            	$(".moreDetails").show();
-            });
-            // content = '<h1>' + evt.templateInfo.title + '</h1>'
+            	$(secondary_info).appendTo(".moreDetails")
+            	// $(this).show($(".moreDetails"));
 
-            // $(content).appendTo(".moreDetails");
+
+            });
+
             
 
           });
-	    // $("button").on("click", function(){
-	    // 	console.log("happy")
-	    // })
+
         
 	}
 
