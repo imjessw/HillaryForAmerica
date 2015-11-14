@@ -24,19 +24,28 @@ $(document).ready(function(){
 	    console.log("success");
 
 
+
+	    	var events= data.events;
+
+				events.sort(function(a, b) {
+					// if A is bigger
+				  if (a.startDate > b.startDate) {
+				  	  return 1;
+				  }
+				  // if B is bigger
+				  if (a.startDate < b.startDate) {
+				  	return -1;
+				  }
+				  // if neither of those is true, they must be the same
+				  return 0
+			
+			}); 
+
 	    $.each(data.events, function(i, evt){
-
-
-	    	var dates= $.each(evt, function( i, value ) {
-			  console.log( evt.startDate );
-			});
-					    		
-
-
 
 	    	var main_info = '<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
-            main_info += '<p class="mainInfo">' + evt.createdDate + '</p>';
+            main_info += '<p class="mainInfo">' + evt.startDate+ '</p>';
 
 
             var secondary_info = '<h1 class="">' + 'hello'+ '</h1>'
