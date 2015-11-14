@@ -25,6 +25,15 @@ $(document).ready(function(){
 
 
 	    $.each(data.events, function(i, evt){
+
+
+	    	var dates= $.each(evt, function( i, value ) {
+			  console.log( evt.startDate );
+			});
+					    		
+
+
+
 	    	var main_info = '<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
             main_info += '<p class="mainInfo">' + evt.createdDate + '</p>';
