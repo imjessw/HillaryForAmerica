@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+// Getting all the data from AWS link
 	$.ajax(
 	{
 	    url: 'https://s3.amazonaws.com/interview-api-samples/events-results.json',
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	    console.log(data.events)
 	    console.log("success");
 
-
+// Sorting events based off dates
 
 	    	var events= data.events;
 
@@ -40,12 +40,24 @@ $(document).ready(function(){
 				  return 0
 			
 			}); 
+				// var time= Date.parse(data.events.startDate)
+				// console.log(time)
+			
+				var timeStr = "2010-01-13T18:31:16Z";
+				var date = new Date(timeStr);
+				var day = date.getDate();
+				var year = date.getFullYear();
+				var month = date.getMonth()+1;
+				var dateStr = month+"/"+day+"/"+year;
+
+				console.log(dateStr)
 
 	    $.each(data.events, function(i, evt){
 
+
 	    	var main_info = '<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
-            main_info += '<p class="mainInfo">' + evt.startDate+ '</p>';
+            main_info += '<p class="mainInfo"> Date: ' + evt.startDate+ '</p>';
 
 
             var secondary_info = '<h1 class="">' + 'hello'+ '</h1>'
@@ -60,6 +72,13 @@ $(document).ready(function(){
             	$(secondary_info).appendTo(".moreDetails")
             	// $(this).show($(".moreDetails"));
 
+            var official = evt.official;
+            console.log(official)
+
+            // if official = true{
+
+            // }
+
 
             });
 
@@ -69,6 +88,7 @@ $(document).ready(function(){
 
         
 	}
+	console.log("done")
 
 
 
