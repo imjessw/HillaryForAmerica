@@ -1,29 +1,31 @@
 doctype html
 html(lang="en")
   head
+    title= "Hillary for America"
+    link(href='../stylesheets/style.css', rel='stylesheet')
+    
+    
+    
 
   body
-    div
+    div#navBar
       ol
         li 
-          img(src='/images/Logo.png')
+          img.logoNav(src='/images/Logo.png')
 
     h1 Hillary for America
     p.
       Vote Hillary 2016
 
-
-    button.eventsButton View Event Details
-
-    p
-      select(name="user[province]")
-        option(value="") -- Select State --
-        option(value="AB") Alberta
-        option(value="BC") British Columbia
-        option(value="SK") Saskatchewan
-        option(value="MB") Manitoba
-        option(value="ON") Ontario
-        option(value="QC") Quebec
+    //- p
+    //- select(name="user[province]")
+    //-   option(value="") -- Select State --
+    //-   option(value="AB") Alberta
+    //-   option(value="BC") British Columbia
+    //-   option(value="SK") Saskatchewan
+    //-   option(value="MB") Manitoba
+    //-   option(value="ON") Ontario
+    //-   option(value="QC") Quebec
 
     div
       div.upcomingEvents

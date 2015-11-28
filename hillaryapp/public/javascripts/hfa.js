@@ -66,10 +66,14 @@ $(document).ready(function(){
 
             main_info += '<button class="eventsButton">View Event Details</button>';
             $(main_info).appendTo(".upcomingEvents");
+            $(secondary_info).appendTo(".upcomingEvents");
 
-            $('.eventsButton').on('click',function(){
-            	console.log("bam")
-            	$(secondary_info).appendTo(".moreDetails")
+            // $('.eventsButton').on('click',function(){
+            // 	console.log("bam");
+            // 	$secondary_info.toggle();
+            // 	if () {};
+            	$(this).show()
+            	// $(secondary_info).appendTo(".moreDetails")
             	// $(this).show($(".moreDetails"));
 
             var official = evt.official;
@@ -84,7 +88,7 @@ $(document).ready(function(){
 
             
 
-          });
+          // });
 
         
 	}

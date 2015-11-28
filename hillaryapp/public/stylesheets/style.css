@@ -1,8 +1,19 @@
 body {
   padding: 50px;
+  background-color:  orange;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#navBar{
+	background-color: #002776 !important;
+	width: 100%;
+}
+
+
+.hide{
+	display: none;
 }
