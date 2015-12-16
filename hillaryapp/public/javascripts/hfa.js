@@ -64,6 +64,37 @@ $(document).ready(function(){
 
 
 
+			// var city= evt.locations[1].city;
+
+			// console.log(evt.locations[i].city);
+
+			// console.log(evt.locations[i]['city']);
+
+
+
+
+			evt.locations.forEach(function(locations, i, array) {
+				var city= evt.locations[i].city;
+				// var state= evt.locations[i].state;
+				// var timeZone= evt.locations[i].timezone;
+				// var contactPhone=
+				// var conatctEmail=
+				// var contactName=
+				// var address1=
+				// var postalCode=
+
+
+
+
+
+
+
+
+				console.log(city);
+				
+			    
+			});
+
 
 
 
@@ -73,8 +104,8 @@ $(document).ready(function(){
 	    				'<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
 	    	main_info += '<p class="mainInfo">' + evt.name + '</p>';
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
-	    	main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
-            main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
+	    	// main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
+      //       main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
 
 
 
