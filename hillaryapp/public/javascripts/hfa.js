@@ -53,6 +53,8 @@ $(document).ready(function(){
 				var myDate = new Date(eventStart);
 				console.log(myDate);
 
+
+
 			});
 
 
@@ -61,19 +63,35 @@ $(document).ready(function(){
 
 	    $.each(data.events, function(i, evt){
 
+	    	var eventStart= evt.startDate;
+	    	var myDate = new Date(eventStart);
+			// console.log(myDate);
+
+			var dateString = 
+			  myDate.getUTCMonth() +"/"+
+			  ("0" + (myDate.getUTCDate()+1)).slice(-2) +"/"+
+			  ("0" + myDate.getUTCFullYear()).slice(-2);
+
+			  var timeOfEvent=
+
+			  ("0" + myDate.getUTCHours()).slice(-2) + ":" +
+			  ("0" + myDate.getUTCMinutes()).slice(-2);
+
+
+
 
 	    	var main_info = '<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
-            main_info += '<p class="mainInfo"> Date: ' + evt.startDate+ '</p>';
+            main_info += '<p class="mainInfo"> Date: ' + dateString + " Time: "+ timeOfEvent+ '</p>';
 
 
-            var secondary_info = '<h1 class="">' + 'hello'+ '</h1>'
-            secondary_info += '<p class="hide">' + evt.description + '</p>';
-            secondary_info += '<p class="hide">' + evt.createdDate + '</p>';
+            // var secondary_info = '<h1 class="">' + 'hello'+ '</h1>'
+            // secondary_info += '<p class="hide">' + evt.description + '</p>';
+            // secondary_info += '<p class="hide">' + evt.createdDate + '</p>';
 
             main_info += '<button class="eventsButton">View Event Details</button>';
             $(main_info).appendTo(".upcomingEvents");
-            $(secondary_info).appendTo(".upcomingEvents");
+            // $(secondary_info).appendTo(".upcomingEvents");
 
             
 
