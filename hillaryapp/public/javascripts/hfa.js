@@ -75,13 +75,14 @@ $(document).ready(function(){
 
 			evt.locations.forEach(function(locations, i, array) {
 				var city= evt.locations[i].city;
-				// var state= evt.locations[i].state;
-				// var timeZone= evt.locations[i].timezone;
-				// var contactPhone=
-				// var conatctEmail=
-				// var contactName=
-				// var address1=
-				// var postalCode=
+				var state= evt.locations[i].state;
+				var timeZone= evt.locations[i].timezone;
+				var contactPhone= evt.locations[i].contactPhone;
+				var contactEmail= evt.locations[i].contactEmail;
+				var contactName= evt.locations[i].contactName;
+				var address1= evt.locations[i].address1;
+				var address2= evt.locations[i].address2;
+				var postalCode= evt.locations[i].postalCode;
 
 
 
@@ -90,7 +91,9 @@ $(document).ready(function(){
 
 
 
-				console.log(city);
+
+
+				console.log(timeZone);
 				
 			    
 			});
@@ -116,31 +119,10 @@ $(document).ready(function(){
             main_info += '<p class="secondary_info">' + evt.description + '</p>';
             main_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
             main_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
+            main_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            // var secondary_info = '<h1 class="hide">' + 'hello'+ '</h1>'
-            // secondary_info += '<p class="hide">' + evt.description + '</p>';
-            // secondary_info += '<p class="hide">' + evt.createdDate + '</p>';
 
             
             $(main_info).appendTo(".upcomingEvents");
