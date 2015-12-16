@@ -4,3 +4,6 @@ body {
 ol {
   list-style: none;
 }
+.secondary_info {
+  display: none;
+}
