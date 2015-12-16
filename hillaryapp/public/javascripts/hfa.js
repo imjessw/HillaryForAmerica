@@ -46,7 +46,13 @@ $(document).ready(function(){
 			
 
 			$.each(data.events, function(i,startEvent){
-				console.log(startEvent.startDate);
+			
+
+				var eventStart= startEvent.startDate;
+
+				var myDate = new Date(eventStart);
+				console.log(myDate);
+
 			});
 
 
