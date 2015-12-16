@@ -18,10 +18,12 @@ $(document).ready(function(){
 	function hillEvents(data)
 	{
 	    $('#hillEvents').html(data.Date);
-	    console.log(data);
+	    // console.log(data);
 	    // debugger;
-	    console.log(data.events)
-	    console.log("success");
+	    // console.log(data.events)
+	    // console.log("success");
+	    // console.log(data.events.startDate);
+
 
 // Sorting events based off dates
 
@@ -40,17 +42,16 @@ $(document).ready(function(){
 				  return 0
 			
 			}); 
-				// var time= Date.parse(data.events.startDate)
-				// console.log(time)
-			
-				var timeStr = "2010-01-13T18:31:16Z";
-				var date = new Date(timeStr);
-				var day = date.getDate();
-				var year = date.getFullYear();
-				var month = date.getMonth()+1;
-				var dateStr = month+"/"+day+"/"+year;
 
-				console.log(dateStr)
+			
+
+			$.each(data.events, function(i,startEvent){
+				console.log(startEvent.startDate);
+			});
+
+
+
+								
 
 	    $.each(data.events, function(i, evt){
 
@@ -68,27 +69,18 @@ $(document).ready(function(){
             $(main_info).appendTo(".upcomingEvents");
             $(secondary_info).appendTo(".upcomingEvents");
 
-            // $('.eventsButton').on('click',function(){
-            // 	console.log("bam");
-            // 	$secondary_info.toggle();
-            // 	if () {};
-            	$(this).show()
-            	// $(secondary_info).appendTo(".moreDetails")
-            	// $(this).show($(".moreDetails"));
+            
 
             var official = evt.official;
             console.log(official)
 
-            // if official = true{
-
-            // }
 
 
             });
 
             
 
-          // });
+
 
         
 	}
