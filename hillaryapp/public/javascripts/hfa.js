@@ -64,16 +64,12 @@ $(document).ready(function(){
 
 
 
-			// var city= evt.locations[1].city;
 
-			// console.log(evt.locations[i].city);
-
-			// console.log(evt.locations[i]['city']);
-
-
-
+			//Createing variables for schema found within 
 
 			evt.locations.forEach(function(locations, i, array) {
+
+				//location data
 				var city= evt.locations[i].city;
 				var state= evt.locations[i].state;
 				var timeZone= evt.locations[i].timezone;
@@ -84,6 +80,7 @@ $(document).ready(function(){
 				var address2= evt.locations[i].address2;
 				var postalCode= evt.locations[i].postalCode;
 
+				//hosts
 				var host= evt.locations[i].tags.host;
 				var specialGuest=evt.locations[i].tags.specialGuest;
 				var cohost=evt.locations[i].tags.cohost;
@@ -97,8 +94,11 @@ $(document).ready(function(){
 				var tierMax=evt.locations[i].tiers[i].maxNum;
 				var tierQuantity=evt.locations[i].tiers[i].quantity;
 
+				var shiftStart= evt.locations[i].shifts[i].startDate;
+				var shifytEnd= evt.locations[i].shifts[i].endDate;
 
-				console.log(tierQuantity);
+
+				console.log(shiftStart);
 
 
 				// If any value is equal to null, '', undefined or 
@@ -146,38 +146,7 @@ $(document).ready(function(){
             
 
             // var official = evt.official;
-            // console.log(official)
-
-
-            // Make attending state persist
-   //          var createCookie = function(name, value, days) {
-			//     var expires;
-			//     if (days) {
-			//         var date = new Date();
-			//         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-			//         expires = "; expires=" + date.toGMTString();
-			//     }
-			//     else {
-			//         expires = "";
-			//     }
-			//     document.cookie = name + "=" + value + expires + "; path=/";
-			// }
-
-			// function getCookie(c_name) {
-			//     if (document.cookie.length > 0) {
-			//         c_start = document.cookie.indexOf(c_name + "=");
-			//         if (c_start != -1) {
-			//             c_start = c_start + c_name.length + 1;
-			//             c_end = document.cookie.indexOf(";", c_start);
-			//             if (c_end == -1) {
-			//                 c_end = document.cookie.length;
-			//             }
-			//             return unescape(document.cookie.substring(c_start, c_end));
-			//         }
-			//     }
-			//     return "";
-			// }
-
+            // console.log(official;
 
 
             });
