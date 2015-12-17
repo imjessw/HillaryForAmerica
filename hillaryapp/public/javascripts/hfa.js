@@ -113,7 +113,10 @@ $(document).ready(function(){
 			    
 			});
 
-
+			$.each(data.events, function(i, evt){
+				$(".content").append("<div class=upcomingEvents></div>");
+				
+			}
 
 
 			// Adding content to the page
@@ -137,10 +140,10 @@ $(document).ready(function(){
             // main_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
 
             var secondary_info = '<h1 class="secondary_info">' + 'hello'+ '</h1>';
-            secondary_info += '<p class="secondary_info">' + evt.description + '</p>';
-            secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
-            secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
-            secondary_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
+            // secondary_info += '<p class="secondary_info">' + evt.description + '</p>';
+            // secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
+            // secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
+            // secondary_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
 
 
 
@@ -149,9 +152,16 @@ $(document).ready(function(){
             $(main_info).appendTo(".upcomingEvents");
             $(secondary_info).appendTo(".moreDetails")
 
+
+
+
+
+
+
             
             $('.eventsButton').on('click', function(){
-            	$(this).children('.upcomingEvents').show();
+            	secondary_info.show();
+            	
             	console.log("clicked")
 
             });
