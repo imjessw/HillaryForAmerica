@@ -5,9 +5,6 @@ body {
 ol {
   list-style: none;
 }
-.moreDetails {
-  display: none;
-}
 .eventsButton {
   background-color: #0000ff;
   color: #ffffff;
