@@ -84,16 +84,28 @@ $(document).ready(function(){
 				var address2= evt.locations[i].address2;
 				var postalCode= evt.locations[i].postalCode;
 
+				var host= evt.locations[i].tags.host;
+				var specialGuest=evt.locations[i].tags.specialGuest;
+				var cohost=evt.locations[i].tags.cohost;
 
 
+				//tiers
+				var tierTitle= evt.locations[i].tiers[i].title;
+				var tierDecription= evt.locations[i].tiers[i].decription;
+				var tierPrice=evt.locations[i].tiers[i].price;
+				var tierRaiser=evt.locations[i].tiers[i].raiser;
+				var tierMax=evt.locations[i].tiers[i].maxNum;
+				var tierQuantity=evt.locations[i].tiers[i].quantity;
 
 
+				console.log(tierQuantity);
 
 
+				// If any value is equal to null, '', undefined or 
+				//nan do not show the append the class hide;
+				
 
 
-
-				console.log(timeZone);
 				
 			    
 			});
@@ -103,9 +115,8 @@ $(document).ready(function(){
 
 			// Adding content to the page
 
-	    	var main_info = 
-	    				'<h1 class="mainInfo">' + evt.templateInfo.title + '</h1>'
-	    	main_info += '<p class="mainInfo">' + evt.name + '</p>';
+	    	var main_info = '<h1 class="mainInfo">' + evt.name + '</h1>'
+	    	main_info += '<p class="mainInfo">' +  evt.templateInfo.title + '</p>';
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
 	    	// main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
       //       main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
