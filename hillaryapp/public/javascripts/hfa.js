@@ -143,8 +143,11 @@ $(document).ready(function(){
 
 
             $("body").append("<div class=content></div>");
-			$(".content").append("<div class= upcomingEvents>"+ main_info +"</div>");
-			$(".upcomingEvents").append("<div class=secondary_info>"+ secondary_info +"</div>");
+
+            
+   //          $.each()
+			// $(".content").append("<div class= upcomingEvents>"+ main_info +"</div>");
+			// $(".upcomingEvents").append("<div class=secondary_info>"+ secondary_info +"</div>");
 
 
 			// Adding content to the page
