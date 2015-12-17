@@ -4,6 +4,13 @@ body {
 ol {
   list-style: none;
 }
-.secondary_info {
+.moreDetails {
   display: none;
+}
+.eventsButton {
+  background-color: #0000ff;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
 }

@@ -98,11 +98,14 @@ $(document).ready(function(){
 				var shifytEnd= evt.locations[i].shifts[i].endDate;
 
 
-				console.log(shiftStart);
+				// console.log(shiftStart);
 
 
 				// If any value is equal to null, '', undefined or 
 				//nan do not show the append the class hide;
+
+				// append to main info?
+
 				
 
 
@@ -118,6 +121,7 @@ $(document).ready(function(){
 	    	var main_info = '<h1 class="mainInfo">' + evt.name + '</h1>'
 	    	main_info += '<p class="mainInfo">' +  evt.templateInfo.title + '</p>';
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
+
 	    	// main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
       //       main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
 
@@ -126,22 +130,31 @@ $(document).ready(function(){
             main_info += '<button class="eventsButton">View Event Details</button>';
 
 
-            main_info += '<h1 class="secondary_info">' + 'hello'+ '</h1>';
-            main_info += '<p class="secondary_info">' + evt.description + '</p>';
-            main_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
-            main_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
-            main_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
+            // main_info += '<h1 class="secondary_info">' + 'hello'+ '</h1>';
+            // main_info += '<p class="secondary_info">' + evt.description + '</p>';
+            // main_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
+            // main_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
+            // main_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
+
+            var secondary_info = '<h1 class="secondary_info">' + 'hello'+ '</h1>';
+            secondary_info += '<p class="secondary_info">' + evt.description + '</p>';
+            secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
+            secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
+            secondary_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
 
 
 
 
             
             $(main_info).appendTo(".upcomingEvents");
-            
-            // $('.eventsButton').on('click', function(){
-            // 	this.('.secondary_info').show();
+            $(secondary_info).appendTo(".moreDetails")
 
-            // });
+            
+            $('.eventsButton').on('click', function(){
+            	$(this).children('.upcomingEvents').show();
+            	console.log("clicked")
+
+            });
 
             
 
