@@ -114,23 +114,24 @@ $(document).ready(function(){
 			});
 
 			$.each(data.events, function(i, evt){
-				$(".content").append("<div class=upcomingEvents></div>");
-				
-			}
+				$(".content").append("<div class=upcomingEvents>Hello</div>");
+
+
+			})
 
 
 			// Adding content to the page
 
-	    	var main_info = '<h1 class="mainInfo">' + evt.name + '</h1>'
-	    	main_info += '<p class="mainInfo">' +  evt.templateInfo.title + '</p>';
-	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
+	    	// var main_info = '<h1 class="mainInfo">' + evt.name + '</h1>'
+	    	// main_info += '<p class="mainInfo">' +  evt.templateInfo.title + '</p>';
+	    	// main_info += '<p class="mainInfo">' + evt.description + '</p>';
 
 	    	// main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
       //       main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
 
 
 
-            main_info += '<button class="eventsButton">View Event Details</button>';
+            // main_info += '<button class="eventsButton">View Event Details</button>';
 
 
             // main_info += '<h1 class="secondary_info">' + 'hello'+ '</h1>';
@@ -139,7 +140,7 @@ $(document).ready(function(){
             // main_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
             // main_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
 
-            var secondary_info = '<h1 class="secondary_info">' + 'hello'+ '</h1>';
+            // var secondary_info = '<h1 class="secondary_info">' + 'hello'+ '</h1>';
             // secondary_info += '<p class="secondary_info">' + evt.description + '</p>';
             // secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
             // secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
@@ -149,8 +150,8 @@ $(document).ready(function(){
 
 
             
-            $(main_info).appendTo(".upcomingEvents");
-            $(secondary_info).appendTo(".moreDetails")
+            // $(main_info).appendTo(".upcomingEvents");
+            // $(secondary_info).appendTo(".moreDetails")
 
 
 
