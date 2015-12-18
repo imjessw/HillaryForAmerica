@@ -5,6 +5,9 @@ body {
 ol {
   list-style: none;
 }
+.hide {
+  display: none;
+}
 .eventsButton {
   background-color: #0000ff;
   color: #ffffff;
@@ -12,4 +15,9 @@ ol {
   padding: 10px 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+}
+.secondary_info {
+  height: 200px;
+  background-color: yellow;
+  display: none;
 }

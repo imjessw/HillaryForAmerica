@@ -42,7 +42,8 @@ $(document).ready(function(){
 								
 
 	    $.each(data.events, function(i, evt){
-	    		    	// converting date and time.
+	    
+	    	// converting date and time.
 
 	    	var eventStart= evt.startDate;
 	    	var myDate = new Date(eventStart);
@@ -68,30 +69,56 @@ $(document).ready(function(){
 
 
 
-	    	var main_info ='<h1 class="mainInfo">' + evt.name + '</h1>';
-	    	main_info += '<p class="mainInfo">' +  evt.templateInfo.title + '</p>';
-	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
+	    	var main_info ='<h1>' + evt.name + '</h1>';
+	    	main_info += '<p>' +  evt.templateInfo.title + '</p>';
+	    	main_info += '<p>' + evt.description + '</p>';
+	    	main_info += '<p> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
+            // main_info += '<button class="eventsButton">View Event Details</button>';
 
-	    	// main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
-            main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
-            main_info += '<button class="eventsButton main_info">View Event Details</button>';
+
+	    	// only counts first record
+	    	// main_info += '<p class="mainInfo">' + evt.locations[i].city + ','+ evt.locations[i].state +'</p>';
+            
             
 
-            var secondary_info = '<h1 class="secondary_info">' + 'hello'+ '</h1>';
-            secondary_info += '<p class="secondary_info">' + evt.description + '</p>';
-            secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
-            secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
-            secondary_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
+            var secondary_info = '<h1 class="">' + 'hello'+ '</h1>';
+            secondary_info += '<p class="">' + evt.description + '</p>';
+            secondary_info += '<p class="">' + evt.createdDate + '</p>';
+            secondary_info += '<p class="">' + evt.createdDate + '</p>';
+            secondary_info += '<p class="">' + evt.guestsCanInviteOthers + '</p>';
+
+            // secondary_info += '<input type="checkbox" name="vehicle" value="Car">'
+
+
+	    	$(".eventsButton").click(function(){
+            	$(this).next('div').show();
+
+            	
+
+
+
+            	
+            })          
+            
+
+
+
+
 
 
 	    	$.each(evt, function (index, record) {
 
 	    		$("div.content").append("<div class=event><div class=main_info>"+ main_info 
-	    			+"<div class=secondary_info>"+ secondary_info+"</div></div></div>");
-
-
+	    			+"<button class=eventsButton>"+"View Event Details"+" </button>"
+	    			+"<div class=secondary_info>"+ secondary_info +"</div></div></div>");
 
 	    	})
+
+
+
+
+
+
 
 
 
