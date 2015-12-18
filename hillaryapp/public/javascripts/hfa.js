@@ -65,6 +65,90 @@ $(document).ready(function(){
 
 
 
+		//getting all nested records
+		var locData = {}
+
+    		evt.locations.forEach(function(locations, i, array) {
+
+				//location data
+				var city= evt.locations[i].city;
+				var state= evt.locations[i].state;
+				var timeZone= evt.locations[i].timezone;
+				var contactPhone= evt.locations[i].contactPhone;
+				var contactEmail= evt.locations[i].contactEmail;
+				var contactName= evt.locations[i].contactName;
+				var address1= evt.locations[i].address1;
+				var address2= evt.locations[i].address2;
+				var postalCode= evt.locations[i].postalCode;
+
+				//hosts
+				var host= evt.locations[i].tags.host;
+				var specialGuest=evt.locations[i].tags.specialGuest;
+				var cohost=evt.locations[i].tags.cohost;
+
+
+				//tiers
+				var tierTitle= evt.locations[i].tiers[i].title;
+				var tierDecription= evt.locations[i].tiers[i].decription;
+				var tierPrice=evt.locations[i].tiers[i].price;
+				var tierRaiser=evt.locations[i].tiers[i].raiser;
+				var tierMax=evt.locations[i].tiers[i].maxNum;
+				var tierQuantity=evt.locations[i].tiers[i].quantity;
+
+				var shiftStart= evt.locations[i].shifts[i].startDate;
+				var shiftEnd= evt.locations[i].shifts[i].endDate;
+
+				//Creating variables for schema found within locations
+
+				console.log(evt.locations[i].city)
+
+				//if equal to null/nan/undefined/""
+
+			    
+			});
+
+
+
+
+
+
+
+
+			// export variable to golbal var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -73,7 +157,7 @@ $(document).ready(function(){
 	    	main_info += '<p>' +  evt.templateInfo.title + '</p>';
 	    	main_info += '<p>' + evt.description + '</p>';
 	    	main_info += '<p> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
-            // main_info += '<button class="eventsButton">View Event Details</button>';
+            main_info += '<button class="eventsButton">View Event Details</button>';
 
 
 	    	// only counts first record
@@ -91,30 +175,50 @@ $(document).ready(function(){
 
 
 	    	$(".eventsButton").click(function(){
-            	$(this).next('div').show();
 
+	    		// if ($.trim($(this).text()) === 'View Event Details') {
+	    			$(this).next('div').show();
+				//     $(this).text('Show Fewer Details');
+				// } else {
+				//     $(this).text('View Event Details');
+				    // $(this).next('div').hide();        
+				// }
             	
+            })   
 
 
 
-            	
-            })          
             
+	    	// Attending Event
+
+			$("input[type=checkbox]").each(function () {
+			    $(this).change(updateCount);
+
+			  });
+
+			  updateCount();
+
+			  function updateCount () {
+			    var count = $("input[type=checkbox]:checked").size();
+			    
+
+			    $("#count").text(count);
+			    $("#status").show();
+			  };
 
 
 
 
 
 
-	    	$.each(evt, function (index, record) {
+	    	// $.each(evt, function (index, record) {
+
 
 	    		$("div.content").append("<div class=event><div class=main_info>"+ main_info 
-	    			+"<button class=eventsButton>"+"View Event Details"+" </button>"
-	    			+"<div class=secondary_info>"+ secondary_info +"</div></div></div>");
+	    			+"<div class=secondary_info>"+ secondary_info +"<input class=attending type=checkbox>"
+	    			+"I will attend this event"+"</>"+"</div></div></div>");
 
-	    	})
-
-
+	    	// })
 
 
 
@@ -123,44 +227,9 @@ $(document).ready(function(){
 
 
 
-	    		evt.locations.forEach(function(locations, i, array) {
-
-					//location data
-					var city= evt.locations[i].city;
-					var state= evt.locations[i].state;
-					var timeZone= evt.locations[i].timezone;
-					var contactPhone= evt.locations[i].contactPhone;
-					var contactEmail= evt.locations[i].contactEmail;
-					var contactName= evt.locations[i].contactName;
-					var address1= evt.locations[i].address1;
-					var address2= evt.locations[i].address2;
-					var postalCode= evt.locations[i].postalCode;
-
-					//hosts
-					var host= evt.locations[i].tags.host;
-					var specialGuest=evt.locations[i].tags.specialGuest;
-					var cohost=evt.locations[i].tags.cohost;
 
 
-					//tiers
-					var tierTitle= evt.locations[i].tiers[i].title;
-					var tierDecription= evt.locations[i].tiers[i].decription;
-					var tierPrice=evt.locations[i].tiers[i].price;
-					var tierRaiser=evt.locations[i].tiers[i].raiser;
-					var tierMax=evt.locations[i].tiers[i].maxNum;
-					var tierQuantity=evt.locations[i].tiers[i].quantity;
 
-					var shiftStart= evt.locations[i].shifts[i].startDate;
-					var shiftEnd= evt.locations[i].shifts[i].endDate;
-
-					//Creating variables for schema found within locations
-
-					console.log(evt.locations[i].city)
-
-					//if equal to null/nan/undefined/""
-
-				    
-				});
 
 				// $("div.content").append("<div class=event><div class=main_info><div class=secondary_info></div></div></div>");
 			
