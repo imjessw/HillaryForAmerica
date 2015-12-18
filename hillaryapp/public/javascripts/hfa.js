@@ -71,7 +71,7 @@ $(document).ready(function(){
 					var tierQuantity=evt.locations[i].tiers[i].quantity;
 
 					var shiftStart= evt.locations[i].shifts[i].startDate;
-					var shifytEnd= evt.locations[i].shifts[i].endDate;
+					var shiftEnd= evt.locations[i].shifts[i].endDate;
 
 
 					//if equal to null/nan/undefined/""
