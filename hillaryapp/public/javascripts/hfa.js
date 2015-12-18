@@ -66,7 +66,7 @@ $(document).ready(function(){
 
 
 		//getting all nested records
-		var locData = {}
+		
 
     		evt.locations.forEach(function(locations, i, array) {
 
@@ -108,51 +108,6 @@ $(document).ready(function(){
 			});
 
 
-
-
-
-
-
-
-			// export variable to golbal var
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	    	var main_info ='<h1>' + evt.name + '</h1>';
 	    	main_info += '<p>' +  evt.templateInfo.title + '</p>';
 	    	main_info += '<p>' + evt.description + '</p>';
@@ -176,13 +131,13 @@ $(document).ready(function(){
 
 	    	$(".eventsButton").click(function(){
 
-	    		// if ($.trim($(this).text()) === 'View Event Details') {
+	    		if ($.trim($(this).text()) === 'View Event Details') {
 	    			$(this).next('div').show();
-				//     $(this).text('Show Fewer Details');
-				// } else {
-				//     $(this).text('View Event Details');
-				    // $(this).next('div').hide();        
-				// }
+				    $(this).text('Show Fewer Details');
+				} else {
+				    $(this).text('View Event Details');
+				    $(this).next('div').hide();        
+				}
             	
             })   
 
