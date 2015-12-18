@@ -20,6 +20,7 @@ $(document).ready(function(){
 	    $('#hillEvents').html(data.Date);
 
 
+
 // Sorting events based off dates
 
 	    	var events= data.events;
@@ -41,6 +42,42 @@ $(document).ready(function(){
 								
 
 	    $.each(data.events, function(i, evt){
+
+	    		evt.locations.forEach(function(locations, i, array) {
+
+					//location data
+					var city= evt.locations[i].city;
+					var state= evt.locations[i].state;
+					var timeZone= evt.locations[i].timezone;
+					var contactPhone= evt.locations[i].contactPhone;
+					var contactEmail= evt.locations[i].contactEmail;
+					var contactName= evt.locations[i].contactName;
+					var address1= evt.locations[i].address1;
+					var address2= evt.locations[i].address2;
+					var postalCode= evt.locations[i].postalCode;
+
+					//hosts
+					var host= evt.locations[i].tags.host;
+					var specialGuest=evt.locations[i].tags.specialGuest;
+					var cohost=evt.locations[i].tags.cohost;
+
+
+					//tiers
+					var tierTitle= evt.locations[i].tiers[i].title;
+					var tierDecription= evt.locations[i].tiers[i].decription;
+					var tierPrice=evt.locations[i].tiers[i].price;
+					var tierRaiser=evt.locations[i].tiers[i].raiser;
+					var tierMax=evt.locations[i].tiers[i].maxNum;
+					var tierQuantity=evt.locations[i].tiers[i].quantity;
+
+					var shiftStart= evt.locations[i].shifts[i].startDate;
+					var shifytEnd= evt.locations[i].shifts[i].endDate;
+
+
+					//if equal to null/nan/undefined/""
+
+				    
+				});
 
 	    	// converting date and time.
 
@@ -67,64 +104,17 @@ $(document).ready(function(){
 
 			//Createing variables for schema found within 
 
-			evt.locations.forEach(function(locations, i, array) {
-
-				//location data
-				var city= evt.locations[i].city;
-				var state= evt.locations[i].state;
-				var timeZone= evt.locations[i].timezone;
-				var contactPhone= evt.locations[i].contactPhone;
-				var contactEmail= evt.locations[i].contactEmail;
-				var contactName= evt.locations[i].contactName;
-				var address1= evt.locations[i].address1;
-				var address2= evt.locations[i].address2;
-				var postalCode= evt.locations[i].postalCode;
-
-				//hosts
-				var host= evt.locations[i].tags.host;
-				var specialGuest=evt.locations[i].tags.specialGuest;
-				var cohost=evt.locations[i].tags.cohost;
-
-
-				//tiers
-				var tierTitle= evt.locations[i].tiers[i].title;
-				var tierDecription= evt.locations[i].tiers[i].decription;
-				var tierPrice=evt.locations[i].tiers[i].price;
-				var tierRaiser=evt.locations[i].tiers[i].raiser;
-				var tierMax=evt.locations[i].tiers[i].maxNum;
-				var tierQuantity=evt.locations[i].tiers[i].quantity;
-
-				var shiftStart= evt.locations[i].shifts[i].startDate;
-				var shifytEnd= evt.locations[i].shifts[i].endDate;
-
-
-				// console.log(shiftStart);
-
-
-				// If any value is equal to null, '', undefined or 
-				//nan do not show the append the class hide;
-
-				// append to main info?
-
-
-				// $(".content").append("<div class=upcomingEvents>Hello</div>");
 
 				
 
-
-				
-			
-			    
-			});
-				
-
-			var main_info = '<h1 class="mainInfo">' + evt.name + '</h1>'
+			var main_info = '<div class=info>'+'<h1 class="mainInfo">' + evt.name + '</h1>'
 	    	main_info += '<p class="mainInfo">' +  evt.templateInfo.title + '</p>';
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
 
 	    	// main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
             main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
             main_info += '<button class="eventsButton main_info">View Event Details</button>';
+            main_info += '</div>';
 
             var secondary_info = '<h1 class="secondary_info">' + 'hello'+ '</h1>';
             secondary_info += '<p class="secondary_info">' + evt.description + '</p>';
@@ -134,44 +124,8 @@ $(document).ready(function(){
 			
 
 
-
-
-
-
-
-
-
-
-            $("body").append("<div class=content></div>");
-
-            
-   //          $.each()
-			// $(".content").append("<div class= upcomingEvents>"+ main_info +"</div>");
-			// $(".upcomingEvents").append("<div class=secondary_info>"+ secondary_info +"</div>");
-
-
-			// Adding content to the page
-
-
-
-
-            
-            // $(main_info).appendTo(".upcomingEvents");
-            // $(secondary_info).appendTo(".moreDetails");
-
-
-
-
-
-
-
-            
-            // $('.eventsButton').on('click', function(){
-            // 	$(this).children(".content").show(".secondary_info");
-
-            // 	console.log("clicked")
-
-            });
+       	});
+		console.log(hillEvents)
 
             
 
