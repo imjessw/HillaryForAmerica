@@ -65,19 +65,17 @@ $(document).ready(function(){
 
 
 
-			//Createing variables for schema found within locations
 
 
-				
 
-			var main_info = '<div class=info>'+'<h1 class="mainInfo">' + evt.name + '</h1>'
+	    	var main_info ='<h1 class="mainInfo">' + evt.name + '</h1>';
 	    	main_info += '<p class="mainInfo">' +  evt.templateInfo.title + '</p>';
 	    	main_info += '<p class="mainInfo">' + evt.description + '</p>';
 
 	    	// main_info += '<p class="mainInfo">' + evt.locations.city + ','+ evt.locations.state'</p>';
             main_info += '<p class="mainInfo"> Date: ' + dateString + " "+ timeOfEvent+ '</p>';
             main_info += '<button class="eventsButton main_info">View Event Details</button>';
-            main_info += '</div>';
+            
 
             var secondary_info = '<h1 class="secondary_info">' + 'hello'+ '</h1>';
             secondary_info += '<p class="secondary_info">' + evt.description + '</p>';
@@ -85,7 +83,18 @@ $(document).ready(function(){
             secondary_info += '<p class="secondary_info">' + evt.createdDate + '</p>';
             secondary_info += '<p class="secondary_info">' + evt.guestsCanInviteOthers + '</p>';
 
-            console.log( evt.description)
+
+	    	$.each(evt, function (index, record) {
+
+	    		$("div.content").append("<div class=event><div class=main_info>"+ main_info 
+	    			+"<div class=secondary_info>"+ secondary_info+"</div></div></div>");
+
+
+
+	    	})
+
+
+
 
 	    		evt.locations.forEach(function(locations, i, array) {
 
@@ -117,6 +126,7 @@ $(document).ready(function(){
 					var shiftStart= evt.locations[i].shifts[i].startDate;
 					var shiftEnd= evt.locations[i].shifts[i].endDate;
 
+					//Creating variables for schema found within locations
 
 					console.log(evt.locations[i].city)
 
@@ -125,7 +135,7 @@ $(document).ready(function(){
 				    
 				});
 
-
+				// $("div.content").append("<div class=event><div class=main_info><div class=secondary_info></div></div></div>");
 			
 
 
