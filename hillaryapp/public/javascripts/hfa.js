@@ -76,40 +76,32 @@ $(document).ready(function(){
             secondary_info += '<p class="">' + evt.createdDate + '</p>';
             secondary_info += '<p class="">' + evt.createdDate + '</p>';
             secondary_info += '<p class="">' + evt.guestsCanInviteOthers + '</p>';
-          
-
-
-
-          $(".eventsButton").click(function(){
-
-            // $($(this).next('div').show()==true)? true : false;
-            if ($(this).next('div').show()==true) {
-              console.log('showing');
-              $(this).previous('div').hide();
-
-            } else{
-              $(secondary_info).hide();
-
-              $(this).next('div').show();
-            }
-
-
-            if ($.trim($(this).text()) === 'View Event Details') {
-                // $(this).next('div').show();
-                $(this).text('Show Fewer Details');
-
-            } else {
-
-                $(this).text('View Event Details');
-                // $(this).next('div').hide();        
-            }
-            console.log("clicked")
             
-          })   
+
+        
+        
+        $("div.content").append("<div class=event><div class=main_info>"+ main_info 
+            +'<button class=eventsButton>'+'View Event Details'+'</button>'
+            +"<div class=secondary_info>"+ secondary_info +"<input class=attending type=checkbox>"
+            +"I will attend this event"+"</>"+"</div></div></div>");
+
+        });
+      $(".eventsButton").on("click",function(){
+        // $(this).next('div').slideToggle("slow");
 
 
+        if ($.trim($(this).text()) === 'View Event Details') {
+            $(this).next('div').show();
+            $(this).text('Show Fewer Details');
 
-                      
+        } else {
+
+            $(this).text('View Event Details');
+            $(this).next('div').hide();        
+        }
+        console.log("clicked")
+        
+      }) 
           // Attending Event
 
           $("input[type=checkbox]").each(function () {
@@ -126,16 +118,6 @@ $(document).ready(function(){
               $("#count").text(count);
               $("#status").show();
             };
-
-
-        
-        
-        $("div.content").append("<div class=event><div class=main_info>"+ main_info 
-            +'<button class=eventsButton>'+'View Event Details'+'</button>'
-            +"<div class=secondary_info>"+ secondary_info +"<input class=attending type=checkbox>"
-            +"I will attend this event"+"</>"+"</div></div></div>");
-
-        });
 
     }
 });
