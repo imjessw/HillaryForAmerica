@@ -18,9 +18,11 @@ ol {
   font-weight: bold;
 }
 .secondary_info {
-  background-color: yellow;
-  display: none;
+  background-color: grey;
   margin-bottom: 20px;
+}
+.hide {
+  display: none;
 }
 #navBar {
   display: inline-block;
