@@ -74,26 +74,6 @@ $(document).ready(function(){
 
               console.log(location.tiers[i].title )
             });
-
-            // $.each(evt.locations[i].tiers[i], function (i, tier){
-            //   secondary_info += '<p>State: ' + tier.title + '</p>';
-            //   // secondary_info += '<p>Timezone: ' + tiers.decription+ '</p>';
-            //   console.log(tier);
-            // });
-
-            // $.each(evt.locations[i].tiers[i], function (i, tier){
-            //   // secondary_info += '<p>State: ' + tiers.title + '</p>';
-            //   // secondary_info += '<p>Timezone: ' + tiers.decription+ '</p>';
-            //   console.log(tiers);
-            // });
-
-
-
-
-
-
-            
-
         
         
         $("div.content").append("<div class=event><div class=main_info>"+ main_info 
