@@ -60,6 +60,7 @@ $(document).ready(function(){
  
 
       $.each(data.events, function(i, evt){
+
         var main_info ='<h1>' + evt.name + '</h1>';
         main_info += '<p>' +  evt.templateInfo.title + '</p>';
         main_info += '<p>' + evt.description + '</p>';
@@ -68,17 +69,36 @@ $(document).ready(function(){
 
         var secondary_info = '<h1 class="">' + 'hello'+ '</h1>';
             secondary_info += '<p class="">' + evt.description + '</p>';
-            secondary_info += '<p class="">' + evt.createdDate + '</p>';
+            secondary_info += '<p class="">' + convertDate(evt.createdDate) + '</p>';
             secondary_info += '<p class="">' + evt.createdDate + '</p>';
             secondary_info += '<p class="">' + evt.guestsCanInviteOthers + '</p>';
 
             $.each(evt.locations, function (i, location){
-              main_info += '<p>State: ' + location.state + '</p>';
-              main_info += '<p>Timezone: ' + location.timezone + '</p>';
+              // change vals
+              main_info += '<p>State: '+ location.city +' , '+ location.state +'</p>';
+              main_info += '<p>ahah: ' + location.contactPhone + '</p>';
+              main_info += '<p>Tcsa: ' + location.contactEmail + '</p>';
+              main_info += '<p>Timezone: ' + location.contactFamilyName + '</p>';
+              main_info += '<p>Timezone: ' + location.contactGivenName + '</p>';
+              main_info += '<p>Timezone: ' + location.hostGivenName + '</p>';
+              main_info += '<p>Timezone: ' + location.tags.host + '</p>';
+              main_info += '<p>Timezone: ' + location.tags.specialGuest + '</p>';
+              main_info += '<p>Timezone: ' + location.tags.cohost + '</p>';
 
-              secondary_info += '<p>fsadfsafas: ' +'<b>'+ location.tiers[i].title +'</b>' + '</p>';
 
-              // console.log(location.tiers[i].title )
+
+
+
+              //cahneg vals
+              secondary_info += '<p>fsadfsafas: ' +'<b>'+ location.shifts[i].title +'</b>' + '</p>';
+              secondary_info += '<p>Location: ' + location.address1 +  location.address2 + location.postalCode +'</p>';
+              secondary_info += '<p>Location: ' + location.tiers[i].description + '</p>';
+              secondary_info += '<p>Location: ' + location.tiers[i].price+ '</p>';
+              secondary_info += '<p>Location: ' + location.tiers[i].raiser+ '</p>';
+              secondary_info += '<p>Location: ' + location.numberSpacesRemaining+ '</p>';
+              secondary_info += '<p>fsadfsafas: ' +'Start shift'+ location.tiers[i].startDate+ " - End shift" +  +'</b>' + '</p>';
+
+
             });
 
         
