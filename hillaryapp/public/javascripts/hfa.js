@@ -55,7 +55,7 @@ $(document).ready(function(){
         timeOfEvent += (minutes < 10) ? ":0" + minutes : ":" + minutes;
         timeOfEvent += (hours >= 12) ? " P.M." : " A.M.";
 
-      return dateString + " " + timeOfEvent;
+        return dateString + " " + timeOfEvent;
       };
  
 
@@ -69,13 +69,29 @@ $(document).ready(function(){
             $.each(evt.locations, function (i, location){
               main_info += '<p>State: ' + location.state + '</p>';
               main_info += '<p>Timezone: ' + location.timezone + '</p>';
+
+              main_info += '<p>fsadfsafas: ' +'<b>'+ location.tiers[i].title +'</b>' + '</p>';
+
+              console.log(location.tiers[i].title )
             });
 
-            var secondary_info = '<h1 class="">' + 'hello'+ '</h1>';
-            secondary_info += '<p class="">' + evt.description + '</p>';
-            secondary_info += '<p class="">' + evt.createdDate + '</p>';
-            secondary_info += '<p class="">' + evt.createdDate + '</p>';
-            secondary_info += '<p class="">' + evt.guestsCanInviteOthers + '</p>';
+            // $.each(evt.locations[i].tiers[i], function (i, tier){
+            //   secondary_info += '<p>State: ' + tier.title + '</p>';
+            //   // secondary_info += '<p>Timezone: ' + tiers.decription+ '</p>';
+            //   console.log(tier);
+            // });
+
+            // $.each(evt.locations[i].tiers[i], function (i, tier){
+            //   // secondary_info += '<p>State: ' + tiers.title + '</p>';
+            //   // secondary_info += '<p>Timezone: ' + tiers.decription+ '</p>';
+            //   console.log(tiers);
+            // });
+
+
+
+
+
+
             
 
         
@@ -118,6 +134,16 @@ $(document).ready(function(){
               $("#count").text(count);
               $("#status").show();
             };
+
+
+            $('.checkbox').change(function(){
+                var star="goldstar";
+                var noStar= "no star";
+                var toStarOrNotToStar = this.checked ? star : noStar;
+              
+              
+                console.log(toStarOrNotToStar);
+            });
 
     }
 });

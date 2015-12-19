@@ -18,9 +18,9 @@ ol {
   font-weight: bold;
 }
 .secondary_info {
-  height: 200px;
   background-color: yellow;
   display: none;
+  margin-bottom: 20px;
 }
 #navBar {
   display: inline-block;
