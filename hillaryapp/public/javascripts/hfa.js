@@ -142,7 +142,7 @@ $(document).ready(function(){
             };
 
 
-            $('.checkbox').change(function(){
+            $('.attending').change(function(){
                 var star="goldstar";
                 var noStar= "no star";
                 var toStarOrNotToStar = this.checked ? star : noStar;
