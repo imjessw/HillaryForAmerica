@@ -74,6 +74,14 @@ $(document).ready(function(){
 
               console.log(location.tiers[i].title )
             });
+
+            var secondary_info = '<h1 class="">' + 'hello'+ '</h1>';
+            secondary_info += '<p class="">' + evt.description + '</p>';
+            secondary_info += '<p class="">' + evt.createdDate + '</p>';
+            secondary_info += '<p class="">' + evt.createdDate + '</p>';
+            secondary_info += '<p class="">' + evt.guestsCanInviteOthers + '</p>';
+            
+
         
         
         $("div.content").append("<div class=event><div class=main_info>"+ main_info 
