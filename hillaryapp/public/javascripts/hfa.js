@@ -66,23 +66,21 @@ $(document).ready(function(){
         main_info += '<p> Date: ' + convertDate(evt.startDate) + '</p>';
             // main_info += '<button class="eventsButton">View Event Details</button>';
 
-            $.each(evt.locations, function (i, location){
-              main_info += '<p>State: ' + location.state + '</p>';
-              main_info += '<p>Timezone: ' + location.timezone + '</p>';
-
-              main_info += '<p>fsadfsafas: ' +'<b>'+ location.tiers[i].title +'</b>' + '</p>';
-
-              console.log(location.tiers[i].title )
-            });
-
-            var secondary_info = '<h1 class="">' + 'hello'+ '</h1>';
+        var secondary_info = '<h1 class="">' + 'hello'+ '</h1>';
             secondary_info += '<p class="">' + evt.description + '</p>';
             secondary_info += '<p class="">' + evt.createdDate + '</p>';
             secondary_info += '<p class="">' + evt.createdDate + '</p>';
             secondary_info += '<p class="">' + evt.guestsCanInviteOthers + '</p>';
-            
 
-        
+            $.each(evt.locations, function (i, location){
+              main_info += '<p>State: ' + location.state + '</p>';
+              main_info += '<p>Timezone: ' + location.timezone + '</p>';
+
+              secondary_info += '<p>fsadfsafas: ' +'<b>'+ location.tiers[i].title +'</b>' + '</p>';
+
+              // console.log(location.tiers[i].title )
+            });
+
         
         $("div.content").append("<div class=event><div class=main_info>"+ main_info 
             +'<button class=eventsButton>'+'View Event Details'+'</button>'
