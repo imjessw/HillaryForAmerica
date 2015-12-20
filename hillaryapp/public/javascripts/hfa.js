@@ -122,103 +122,39 @@ $(document).ready(function(){
 
               if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefinided' || location.contactGivenName  !== null ){
                 secondary_info += '<p>Contact Name: ' + location.contactGivenName  + location.contactFamilyName + '</p>';
-              }
-              else{
-                console.log("hi");
               };
 
               if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefinided' || location.contactGivenName  !== null ){
                 secondary_info += '<p>Address: ' + location.address1 +  location.address2 + location.postalCode +'</p>';
-              }
-              else{
-                console.log("hi");
               };
 
               if ( location.contactPhone  !== '0' || location.contactPhone !== '' || location.contactPhone  !== 'undefinided' || location.contactPhone  !== null ){
                 secondary_info += '<p>Contact by phone: ' + location.contactPhone + '</p>';
-              }
-              else{
-                console.log("hi");
               };
+
               if ( location.contactEmail !== '0' || location.contactEmail !== '' || location.contactEmail  !== 'undefinided' || location.contactEmail  !== null ){
                 secondary_info += '<p>Contact by email: ' + location.contactEmail + '</p>';
-              }
-              else{
-                console.log("hi");
               };
+
               if ( location.tiers[i].description !== '0' || location.tiers[i].description !== '' || location.tiers[i].description  !== 'undefinided' || location.tiers[i].description  !== null ){
                 secondary_info += '<p>Location: ' + location.tiers[i].description + '</p>';
-              }
-              else{
-                console.log("hi");
-              };              
+              };   
+
               if ( location.tiers[i].price !== '0' || location.tiers[i].price !== '' || location.tiers[i].price  !== 'undefinided' || location.tiers[i].price  !== null ){
                 secondary_info += '<p>Price: ' + location.tiers[i].price+ '</p>';
-              }
-              else{
-                console.log("hi");
               };
+
               if ( location.tiers[i].raiser !== '0' || location.tiers[i].raiser !== '' || location.tiers[i].raiser  !== 'undefinided' || location.tiers[i].raiser  !== null ){
                 secondary_info += '<p>Is this a fundraiser?  ' + location.tiers[i].raiser + '</p>';
-              }
-              else{
-                console.log("hi");
               };
+
               if ( location.numberSpacesRemaining !== '0' || location.numberSpacesRemaining !== '' || location.numberSpacesRemaining  !== 'undefinided' || location.numberSpacesRemaining  !== null ){
                 secondary_info += '<p>Open spaces remaining for this event: ' + location.numberSpacesRemaining + '</p>';
-              }
-              else{
-                console.log("hi");
               };
+
               if ( location.tiers[i].startDate !== '0' || location.tiers[i].startDate !== '' || location.tiers[i].startDate  !== 'undefinided' || location.tiers[i].startDate  !== null ){
                   secondary_info += '<p>Shifts: ' +' Start shift: '+ location.tiers[i].startDate+ " End shift: "+location.tiers[i].endDate  +'</b>' + '</p>';
-              }
-
-
-
-
-
-
-
-
-
-
-              // change 
-              // main_info += '<p class=inline>'+ location.city +'</p>';
-              // main_info += '<p>Special Guest: ' + location.state + '</p>';
-              // main_info += '<p>Special Guest: ' + location.tags.specialGuest + '</p>';              
-              // main_info += '<p>Host: ' + location.tags.host + '</p>';
-              // main_info += '<p>Co-Host: ' + location.tags.cohost + '</p>';
-
-
-
-              //change vals
-
-              // secondary_info += '<p>Contact Name: ' +location.contactGivenName  + location.contactFamilyName + '</p>';
-              // secondary_info += '<p>Address: ' + location.address1 +  location.address2 + location.postalCode +'</p>';
-              // secondary_info += '<p>Contact by phone: ' + location.contactPhone + '</p>';
-              // secondary_info += '<p>Contact by email: ' + location.contactEmail + '</p>';
-              // secondary_info += '<p>Location: ' + location.tiers[i].description + '</p>';
-              // secondary_info += '<p>Price: ' + location.tiers[i].price+ '</p>';
-              // secondary_info += '<p>Is this a fundraiser?  ' + location.tiers[i].raiser + '</p>';
-              // secondary_info += '<p>Open spaces remaining for this event: ' + location.numberSpacesRemaining + '</p>';
-              // secondary_info += '<p>Shifts: ' +' Start shift: '+ location.tiers[i].startDate+ " End shift: "+location.tiers[i].endDate  +'</b>' + '</p>';
-
-
-              // for(var prop in location){
-              //   if(location[prop]==""){
-              //     console.log("im empty")
-              //   }
-              // }
-
-
-
-
-
-
-
-
-
+              };
 
 
 
@@ -266,8 +202,8 @@ $(document).ready(function(){
 
 
             $('.attending').change(function(){
-                var star=
-                ('div').append("<img src=images/star.png />");
+              // I want to replace teh console log with appending a gold star to the event title.
+                var star="Gold star"
 
                 var noStar= "no star";
                 var toStarOrNotToStar = this.checked ? star : noStar;
