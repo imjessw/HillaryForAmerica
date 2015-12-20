@@ -18,7 +18,9 @@ ol {
   font-weight: bold;
 }
 .secondary_info {
-  background-color: grey;
+  background-color: #d9e1f9;
+  display: none;
+  padding: 10px;
   margin-bottom: 20px;
 }
 .hide {
