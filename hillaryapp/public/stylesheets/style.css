@@ -37,13 +37,20 @@ ol {
   float: left;
 }
 ol {
-  width: 70%;
+  width: 100%;
+  display: block;
 }
 li {
-  float: left;
-  display: inline;
+  display: inline-block;
   width: 20%;
 }
 .banner {
   width: 100%;
+}
+#status,
+#count {
+  font-size: 20px;
+}
+#eventsHead {
+  margin-top: 20px;
 }
