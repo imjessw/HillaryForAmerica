@@ -67,7 +67,7 @@ $(document).ready(function(){
 
       $.each(data.events, function(i, evt){
 // +'<img src=images/star.png/><span>'+ 'I am attending this event.'+ '</span>'+
-        var main_info ='<h1>' + evt.name + '</h1>';
+        var main_info ='<h1 class=eventName>' + evt.name + '</h1><img class=star src=/images/star.png>';
         main_info += '<p>' + evt.description + '</p>';
         main_info += '<p> Date: ' + convertDate(evt.startDate) + '</p>';
             // main_info += '<button class="eventsButton">View Event Details</button>';
@@ -164,7 +164,7 @@ $(document).ready(function(){
         $("div.content").append("<div class=event><div class=main_info>"+ main_info 
             +'<button class=eventsButton>'+'View Event Details'+'</button>'
             +"<div class=secondary_info>"+ secondary_info +"<input class=attending type=checkbox>"
-            +"I will attend this event"+"</>"+"</div></div></div>");
+            +"I want to attend this event."+"</>"+"</div></div></div>");
 
       });
 
@@ -189,6 +189,7 @@ $(document).ready(function(){
           $("input[type=checkbox]").each(function () {
               $(this).change(updateCount);
 
+
             });
 
             updateCount();
@@ -201,13 +202,23 @@ $(document).ready(function(){
             }
 
 
-            $('.attending').change(function(){
+            $('input.attending').change(function(){
               // I want to replace teh console log with appending a gold star to the event title.
-                var star="Gold star"
+                var star= $(this).parent('div').prepend("<img>",{src:"star.png"});
 
                 var noStar= "no star";
+
+
                 var toStarOrNotToStar = this.checked ? star : noStar;
-              
+
+                if ($(this).val() == true){
+                  console.log("I am attending to this event")
+                  $(this).text("I am attending to this event")
+                } else{
+                  $(this).text("I want to attend this event.")
+                  console.log('boom')
+                };
+                
               
                 console.log(toStarOrNotToStar);
             });
