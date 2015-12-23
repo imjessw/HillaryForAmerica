@@ -95,7 +95,7 @@ $(document).ready(function(){
                 console.log("hi");
               };              
 
-              if (location.tags.specialGuest !== '0' || typeof location.tags.specialGuest !== " " ||  typeof location.tags.specialGuest !== 'undefined' || typeof location.tags.specialGuest !== null ){
+              if (location.tags.specialGuest !== "" ){
                 main_info += '<p>Special Guest: ' + location.tags.specialGuest + '</p>'; 
                 // console.log(location.tags.specialGuest)
               }
@@ -103,10 +103,10 @@ $(document).ready(function(){
                 console.log(location.tags.specialGuest)
 
               };                          
-              if ( location.tags.host !== '0' || location.tags.host !== " "  || location.tags.host !== 'undefined' || location.tags.host !== null ){
+              if ( location.tags.host !== ""){
                 main_info += '<p>Host: ' + location.tags.host + '</p>';
               };
-              if ( location.tags.cohost !== '0' || location.tags.cohost!== '' || location.tags.cohost !== 'undefined' || location.tags.cohost !== null ){
+              if (location.tags.cohost!== '' ){
                 main_info += '<p>Co-Host: ' + location.tags.cohost + '</p>';
               }
               else{
