@@ -144,9 +144,11 @@ $(document).ready(function(){
                 secondary_info += '<p>Price: $' + location.tiers[i].price+ '</p>';
               };
 
-              // if ( location.tiers[i].raiser !== '0' || location.tiers[i].raiser !== '' || location.tiers[i].raiser  !== 'undefined' || location.tiers[i].raiser  !== null ){
-              //   secondary_info += '<p>Is this a fundraiser?  ' + location.tiers[i].raiser + '</p>';
-              // };
+              if ( location.tiers[i].raiser === false  ){
+                secondary_info += '<p>Is this a fundraiser?  No </p>';
+              } else{
+                secondary_info += '<p>Is this a fundraiser?  Yes </p>';
+              }
 
               if ( location.numberSpacesRemaining  !== null ){
                 secondary_info += '<p>Open spaces remaining for this event: ' + location.numberSpacesRemaining + '</p>';
