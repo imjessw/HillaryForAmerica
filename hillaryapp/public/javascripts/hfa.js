@@ -81,21 +81,21 @@ $(document).ready(function(){
 
               // this makes sure that only the items appended to the site have values
               // and currently isn't working 
-              if ( location.city !== '0' || location.city !== " " || location.city !== 'undefinided' || location.city !== null ){
+              if ( location.city !== '0' || location.city !== " " || location.city !== 'undefined' || location.city !== null ){
                 main_info += '<p class=inline>'+ location.city +'</p>';
               }
               else{
                 console.log("hi");
               };
 
-              if ( location.state !== '0' || location.state !== '' || location.state !== 'undefinided' || location.state !== null ){
+              if ( location.state !== '0' || location.state !== '' || location.state !== 'undefined' || location.state !== null ){
                 main_info += '<p>State: ' + location.state + '</p>'
               }
               else{
                 console.log("hi");
               };              
 
-              if (location.tags.specialGuest !== '0' || typeof location.tags.specialGuest !== " " ||  typeof location.tags.specialGuest !== 'undefinided' || typeof location.tags.specialGuest !== null ){
+              if (location.tags.specialGuest !== '0' || typeof location.tags.specialGuest !== " " ||  typeof location.tags.specialGuest !== 'undefined' || typeof location.tags.specialGuest !== null ){
                 main_info += '<p>Special Guest: ' + location.tags.specialGuest + '</p>'; 
                 // console.log(location.tags.specialGuest)
               }
@@ -103,10 +103,10 @@ $(document).ready(function(){
                 console.log(location.tags.specialGuest)
 
               };                          
-              if ( location.tags.host !== '0' || location.tags.host !== " "  || location.tags.host !== 'undefinided' || location.tags.host !== null ){
+              if ( location.tags.host !== '0' || location.tags.host !== " "  || location.tags.host !== 'undefined' || location.tags.host !== null ){
                 main_info += '<p>Host: ' + location.tags.host + '</p>';
               };
-              if ( location.tags.cohost !== '0' || location.tags.cohost!== '' || location.tags.cohost !== 'undefinided' || location.tags.cohost !== null ){
+              if ( location.tags.cohost !== '0' || location.tags.cohost!== '' || location.tags.cohost !== 'undefined' || location.tags.cohost !== null ){
                 main_info += '<p>Co-Host: ' + location.tags.cohost + '</p>';
               }
               else{
@@ -120,39 +120,39 @@ $(document).ready(function(){
 
               //Secondary Info to be sorted based off value.
 
-              if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefinided' || location.contactGivenName  !== null ){
+              if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefined' || location.contactGivenName  !== null ){
                 secondary_info += '<p>Contact Name: ' + location.contactGivenName  + location.contactFamilyName + '</p>';
               };
 
-              if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefinided' || location.contactGivenName  !== null ){
+              if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefined' || location.contactGivenName  !== null ){
                 secondary_info += '<p>Address: ' + location.address1 +  location.address2 + location.postalCode +'</p>';
               };
 
-              if ( location.contactPhone  !== '0' || location.contactPhone !== '' || location.contactPhone  !== 'undefinided' || location.contactPhone  !== null ){
+              if ( location.contactPhone  !== '0' || location.contactPhone !== '' || location.contactPhone  !== 'undefined' || location.contactPhone  !== null ){
                 secondary_info += '<p>Contact by phone: ' + location.contactPhone + '</p>';
               };
 
-              if ( location.contactEmail !== '0' || location.contactEmail !== '' || location.contactEmail  !== 'undefinided' || location.contactEmail  !== null ){
+              if ( location.contactEmail !== '0' || location.contactEmail !== '' || location.contactEmail  !== 'undefined' || location.contactEmail  !== null ){
                 secondary_info += '<p>Contact by email: ' + location.contactEmail + '</p>';
               };
 
-              if ( location.tiers[i].description !== '0' || location.tiers[i].description !== '' || location.tiers[i].description  !== 'undefinided' || location.tiers[i].description  !== null ){
+              if ( location.tiers[i].description !== '0' || location.tiers[i].description !== '' || location.tiers[i].description  !== 'undefined' || location.tiers[i].description  !== null ){
                 secondary_info += '<p>Location: ' + location.tiers[i].description + '</p>';
               };   
 
-              if ( location.tiers[i].price !== '0' || location.tiers[i].price !== '' || location.tiers[i].price  !== 'undefinided' || location.tiers[i].price  !== null ){
+              if ( location.tiers[i].price !== '0' || location.tiers[i].price !== '' || location.tiers[i].price  !== 'undefined' || location.tiers[i].price  !== null ){
                 secondary_info += '<p>Price: ' + location.tiers[i].price+ '</p>';
               };
 
-              if ( location.tiers[i].raiser !== '0' || location.tiers[i].raiser !== '' || location.tiers[i].raiser  !== 'undefinided' || location.tiers[i].raiser  !== null ){
+              if ( location.tiers[i].raiser !== '0' || location.tiers[i].raiser !== '' || location.tiers[i].raiser  !== 'undefined' || location.tiers[i].raiser  !== null ){
                 secondary_info += '<p>Is this a fundraiser?  ' + location.tiers[i].raiser + '</p>';
               };
 
-              if ( location.numberSpacesRemaining !== '0' || location.numberSpacesRemaining !== '' || location.numberSpacesRemaining  !== 'undefinided' || location.numberSpacesRemaining  !== null ){
+              if ( location.numberSpacesRemaining !== '0' || location.numberSpacesRemaining !== '' || location.numberSpacesRemaining  !== 'undefined' || location.numberSpacesRemaining  !== null ){
                 secondary_info += '<p>Open spaces remaining for this event: ' + location.numberSpacesRemaining + '</p>';
               };
 
-              if ( location.tiers[i].startDate !== '0' || location.tiers[i].startDate !== '' || location.tiers[i].startDate  !== 'undefinided' || location.tiers[i].startDate  !== null ){
+              if ( location.tiers[i].startDate !== '0' || location.tiers[i].startDate !== '' || location.tiers[i].startDate  !== 'undefined' || location.tiers[i].startDate  !== null ){
                   secondary_info += '<p>Shifts: ' +' Start shift: '+ location.tiers[i].startDate+ " End shift: "+location.tiers[i].endDate  +'</b>' + '</p>';
               };
 
