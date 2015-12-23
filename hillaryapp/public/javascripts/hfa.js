@@ -81,14 +81,14 @@ $(document).ready(function(){
 
               // this makes sure that only the items appended to the site have values
               // and currently isn't working 
-              if ( location.city !== '0' || location.city !== " " || location.city !== 'undefined' || location.city !== null ){
+              if (location.city !== ""){
                 main_info += '<p class=inline>'+ location.city +'</p>';
               }
               else{
                 console.log("hi");
               };
 
-              if ( location.state !== '0' || location.state !== '' || location.state !== 'undefined' || location.state !== null ){
+              if (location.state !== '' ){
                 main_info += '<p>State: ' + location.state + '</p>'
               }
               else{
@@ -120,19 +120,19 @@ $(document).ready(function(){
 
               //Secondary Info to be sorted based off value.
 
-              if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefined' || location.contactGivenName  !== null ){
+              if (location.contactGivenName !== '' ){
                 secondary_info += '<p>Contact Name: ' + location.contactGivenName  + location.contactFamilyName + '</p>';
               };
 
-              if ( location.contactGivenName  !== '0' || location.contactGivenName !== '' || location.contactGivenName  !== 'undefined' || location.contactGivenName  !== null ){
+              if (location.contactGivenName !== '' ){
                 secondary_info += '<p>Address: ' + location.address1 +  location.address2 + location.postalCode +'</p>';
               };
 
-              if ( location.contactPhone  !== '0' || location.contactPhone !== '' || location.contactPhone  !== 'undefined' || location.contactPhone  !== null ){
+              if ( location.contactPhone !== '' ){
                 secondary_info += '<p>Contact by phone: ' + location.contactPhone + '</p>';
               };
 
-              if ( location.contactEmail !== '0' || location.contactEmail !== '' || location.contactEmail  !== 'undefined' || location.contactEmail  !== null ){
+              if ( location.contactEmail !== '' ){
                 secondary_info += '<p>Contact by email: ' + location.contactEmail + '</p>';
               };
 
@@ -152,7 +152,9 @@ $(document).ready(function(){
                 secondary_info += '<p>Open spaces remaining for this event: ' + location.numberSpacesRemaining + '</p>';
               };
 
-              if ( location.tiers[i].startDate !== '0' || location.tiers[i].startDate !== '' || location.tiers[i].startDate  !== 'undefined' || location.tiers[i].startDate  !== null ){
+
+              // Break up start date
+              if (location.tiers[i].startDate  !== null ){
                   secondary_info += '<p>Shifts: ' +' Start shift: '+ location.tiers[i].startDate+ " End shift: "+location.tiers[i].endDate  +'</b>' + '</p>';
               };
 
