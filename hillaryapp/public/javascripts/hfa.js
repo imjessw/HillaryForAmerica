@@ -140,24 +140,23 @@ $(document).ready(function(){
                 secondary_info += '<p>Location: ' + location.tiers[i].description + '</p>';
               };   
 
-              if ( location.tiers[i].price !== '0' || location.tiers[i].price !== '' || location.tiers[i].price  !== 'undefined' || location.tiers[i].price  !== null ){
-                secondary_info += '<p>Price: ' + location.tiers[i].price+ '</p>';
+              if ( location.tiers[i].price !== 'nan' ){
+                secondary_info += '<p>Price: $' + location.tiers[i].price+ '</p>';
               };
 
-              if ( location.tiers[i].raiser !== '0' || location.tiers[i].raiser !== '' || location.tiers[i].raiser  !== 'undefined' || location.tiers[i].raiser  !== null ){
-                secondary_info += '<p>Is this a fundraiser?  ' + location.tiers[i].raiser + '</p>';
-              };
+              // if ( location.tiers[i].raiser !== '0' || location.tiers[i].raiser !== '' || location.tiers[i].raiser  !== 'undefined' || location.tiers[i].raiser  !== null ){
+              //   secondary_info += '<p>Is this a fundraiser?  ' + location.tiers[i].raiser + '</p>';
+              // };
 
-              if ( location.numberSpacesRemaining !== '0' || location.numberSpacesRemaining !== '' || location.numberSpacesRemaining  !== 'undefined' || location.numberSpacesRemaining  !== null ){
+              if ( location.numberSpacesRemaining  !== null ){
                 secondary_info += '<p>Open spaces remaining for this event: ' + location.numberSpacesRemaining + '</p>';
               };
 
 
               // Break up start date
-              if (location.tiers[i].startDate  !== null ){
-                  secondary_info += '<p>Shifts: ' +' Start shift: '+ location.tiers[i].startDate+ " End shift: "+location.tiers[i].endDate  +'</b>' + '</p>';
+              if (location.tiers[i].startDate  !== null || location.tiers[i].endDate !== null){
+                  secondary_info += '<p>Shifts: ' +' Start shift: '+ location.tiers[i].startDate+ " End shift: "+ location.tiers[i].endDate  +'</b>' + '</p>';
               };
-
 
 
             });
@@ -206,23 +205,22 @@ $(document).ready(function(){
 
             $('input.attending').change(function(){
               // I want to replace teh console log with appending a gold star to the event title.
-                var star= $(this).parent('div').prepend("<img>",{src:"star.png"});
+                var starImage = "<img src=../images/star.png>"
+                var star= $(this).parent('div').prepend(starImage);
 
                 var noStar= "no star";
 
 
                 var toStarOrNotToStar = this.checked ? star : noStar;
 
-                if ($(this).val() == true){
-                  console.log("I am attending to this event")
-                  $(this).text("I am attending to this event")
-                } else{
-                  $(this).text("I want to attend this event.")
-                  console.log('boom')
-                };
-                
-              
-                console.log(toStarOrNotToStar);
+                // if ($(this).val() == true){
+                //   console.log("I am attending to this event")
+                //   $(this).text("I am attending to this event")
+                // } else{
+                //   $(this).text("I want to attend this event.")
+                //   console.log('boom')
+                // };
+
             });
 
     }
