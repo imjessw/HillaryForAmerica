@@ -207,7 +207,7 @@ $(document).ready(function(){
             $('input.attending').change(function(){
               // I want to replace teh console log with appending a gold star to the event title.
                 var starImage = "<img src=../images/star.png>"
-                var star= $(this).parent('div').prepend(starImage);
+                var star= $(this).parents('.main_info').prepend(starImage);
                 var noStar= "no star";
 
                 var toStarOrNotToStar = this.checked ? star : noStar;
