@@ -202,11 +202,19 @@ $(document).ready(function(){
 
             // this is my solution for showing at the top level on the events details
             $('input.attending').change(function(){
+
               // I want to replace the console log with appending a gold star to the event title.
                 var starImage = "<img class=starImage src=../images/star.png>"
-                var star= $(this).parents('.main_info').prepend(starImage);
-                var noStar= "no star";
-                var toStarOrNotToStar = this.checked ? star : noStar;
+
+                if (this.checked){
+                  $(this).parents('.main_info').prepend(starImage);
+                } else{
+                  $(this).parents('.main_info').remove();
+
+                }
+
+
+                // if (true) {};
 
 
             });

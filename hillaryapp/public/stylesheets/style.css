@@ -75,11 +75,29 @@ p {
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   li {
-    width: 27%;
+    width: 32%;
+  }
+  h1.eventName {
+    display: inline-block;
+    margin-left: 0px;
+    padding-left: 10px;
+    width: 500px;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
-  li {
-    width: 25%;
+  #status {
+    width: 240px;
+  }
+  p {
+    max-width: 300px;
+  }
+  h1.eventName {
+    display: inline-block;
+    width: 229px;
+    font-size: 25px;
+  }
+  .starImage {
+    width: 20px;
+    height: 20px;
   }
 }
