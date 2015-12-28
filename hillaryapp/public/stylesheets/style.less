@@ -9,6 +9,11 @@ body{
 	font-family: @mainFont;
 	margin: 0;
 }
+
+.banner{
+	width: 100%;
+}
+
 ol{
 	list-style: none;
 }
@@ -65,9 +70,7 @@ li{
 	width:15%;
 }
 
-.banner{
-	width: 100%;
-}
+
 #status, #count{
 	font-size: 20px;
 }
@@ -98,6 +101,26 @@ p{
 .starImage{
 	width:40px;
 	height: 40px;
+}
+//ipad
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+
+li{
+	width: 27%;
+}
+
+}
+//iphone
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) { 
+
+li{
+	width:25%;
+}
+
 }
 
 

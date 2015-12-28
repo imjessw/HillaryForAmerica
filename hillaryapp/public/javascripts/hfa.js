@@ -75,7 +75,14 @@ $(document).ready(function(){
         var secondary_info = '<h1 class="">' + evt.templateInfo.title + '</h1>';
             secondary_info += '<p class="">' + evt.description + '</p>';
             secondary_info += '<p class="" >Date: ' + convertDate(evt.createdDate) + '</p>';
-            secondary_info += '<p class=""> Can I invite others to this event? ' + evt.guestsCanInviteOthers + '</p>';
+
+            if (location.city !== ""){
+              secondary_info += '<p class=""> Can I invite others to this event? Yes</p>';
+            } else{
+              secondary_info += '<p class=""> Can I invite others to this event? No </p>';
+            }
+
+
 
             $.each(evt.locations, function (i, location){
 
@@ -91,15 +98,15 @@ $(document).ready(function(){
               }
             
 
-              if (location.tags.specialGuest !== "" ){
+              if (location.tags.specialGuest !== "" && location.tags.specialGuest !== undefined ){
                 main_info += '<p>Special Guest: ' + location.tags.specialGuest + '</p>'; 
                 // console.log(location.tags.specialGuest)
               }
                          
-              if ( location.tags.host !== ""){
+              if ( location.tags.host !== "" && location.tags.host !== undefined){
                 main_info += '<p>Host: ' + location.tags.host + '</p>';
               };
-              if (location.tags.cohost!== '' ){
+              if (location.tags.cohost!== '' && location.tags.cohost !== undefined){
                 main_info += '<p>Co-Host: ' + location.tags.cohost + '</p>';
               }
 
@@ -147,7 +154,7 @@ $(document).ready(function(){
 
 
               // Break up start date
-              if (location.tiers[i].startDate  !== null || location.tiers[i].endDate !== null){
+              if (location.tiers[i].startDate  !== null && location.tiers[i].endDate !== null && location.tiers[i].startDate  !== undefined && location.tiers[i].endDate !== undefined){
                   secondary_info += '<p>Shifts: ' +' Start shift: '+ location.tiers[i].startDate+ " End shift: "+ location.tiers[i].endDate  +'</b>' + '</p>';
               };
 
