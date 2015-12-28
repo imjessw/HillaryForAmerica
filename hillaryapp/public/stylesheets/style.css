@@ -23,9 +23,6 @@ ol {
   padding: 10px;
   margin-bottom: 20px;
 }
-.hide {
-  display: none;
-}
 #navBar {
   display: inline-block;
   height: 60px;
@@ -37,12 +34,14 @@ ol {
   float: left;
 }
 ol {
-  width: 100%;
+  width: 96%;
   display: block;
+  padding-left: 0;
+  margin: 10px 10px 10px 20px;
 }
 li {
   display: inline-block;
-  width: 20%;
+  width: 15%;
 }
 .banner {
   width: 100%;
@@ -53,4 +52,24 @@ li {
 }
 #eventsHead {
   margin-top: 20px;
+  margin-left: 20px;
+  font-size: 55px;
+}
+h1.eventName {
+  display: inline-block;
+  width: 800px;
+}
+img.star {
+  height: 42px;
+  margin-top: 6px;
+}
+.main_info {
+  padding: 20px;
+}
+p {
+  width: 700px !important;
+}
+.starImage {
+  width: 40px;
+  height: 40px;
 }

@@ -84,34 +84,25 @@ $(document).ready(function(){
               if (location.city !== ""){
                 main_info += '<p class=inline>'+ location.city +'</p>';
               }
-              else{
-                console.log("hi");
-              };
+
 
               if (location.state !== '' ){
                 main_info += '<p>State: ' + location.state + '</p>'
               }
-              else{
-                console.log("hi");
-              };              
+            
 
               if (location.tags.specialGuest !== "" ){
                 main_info += '<p>Special Guest: ' + location.tags.specialGuest + '</p>'; 
                 // console.log(location.tags.specialGuest)
               }
-              else{
-                console.log(location.tags.specialGuest)
-
-              };                          
+                         
               if ( location.tags.host !== ""){
                 main_info += '<p>Host: ' + location.tags.host + '</p>';
               };
               if (location.tags.cohost!== '' ){
                 main_info += '<p>Co-Host: ' + location.tags.cohost + '</p>';
               }
-              else{
-                console.log("hi");
-              };
+
 
 
 
@@ -206,19 +197,11 @@ $(document).ready(function(){
 
             $('input.attending').change(function(){
               // I want to replace teh console log with appending a gold star to the event title.
-                var starImage = "<img src=../images/star.png>"
+                var starImage = "<img class=starImage src=../images/star.png>"
                 var star= $(this).parents('.main_info').prepend(starImage);
                 var noStar= "no star";
 
                 var toStarOrNotToStar = this.checked ? star : noStar;
-
-                // if ($(this).val() == true){
-                //   console.log("I am attending to this event")
-                //   $(this).text("I am attending to this event")
-                // } else{
-                //   $(this).text("I want to attend this event.")
-                //   console.log('boom')
-                // };
 
             });
 
