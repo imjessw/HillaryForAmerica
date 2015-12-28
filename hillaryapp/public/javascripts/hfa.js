@@ -158,7 +158,7 @@ $(document).ready(function(){
         $("div.content").append("<div class=event><div class=main_info>"+ main_info 
             +'<button class=eventsButton>'+'View Event Details'+'</button>'
             +"<div class=secondary_info>"+ secondary_info +"<input class=attending type=checkbox>"
-            +"I want to attend this event."+"</>"+"</div></div></div>");
+            +"I am attending this event."+"</>"+"</div></div></div>");
 
       });
 
@@ -175,7 +175,6 @@ $(document).ready(function(){
             $(this).text('View Event Details');
             $(this).next('div').hide();        
         }
-        console.log("clicked");
         
       }); 
           // Attending Event
@@ -194,14 +193,14 @@ $(document).ready(function(){
               $("#status").show();
             }
 
-
+            // this is my solution for showing at the top level on the events details
             $('input.attending').change(function(){
-              // I want to replace teh console log with appending a gold star to the event title.
+              // I want to replace the console log with appending a gold star to the event title.
                 var starImage = "<img class=starImage src=../images/star.png>"
                 var star= $(this).parents('.main_info').prepend(starImage);
                 var noStar= "no star";
-
                 var toStarOrNotToStar = this.checked ? star : noStar;
+
 
             });
 
