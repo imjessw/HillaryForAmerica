@@ -70,16 +70,17 @@ $(document).ready(function(){
         var main_info ='<h1 class=eventName>' + evt.name + '</h1>';
         main_info += '<p>' + evt.description + '</p>';
         main_info += '<p> Date: ' + convertDate(evt.startDate) + '</p>';
-            // main_info += '<button class="eventsButton">View Event Details</button>';
 
-        var secondary_info = '<h1 class="">' + evt.templateInfo.title + '</h1>';
-            secondary_info += '<p class="">' + evt.description + '</p>';
-            secondary_info += '<p class="" >Date: ' + convertDate(evt.createdDate) + '</p>';
+
+
+        var secondary_info = '<h1>' + evt.templateInfo.title + '</h1>';
+            secondary_info += '<p >' + evt.description + '</p>';
+            secondary_info += '<p>Date: ' + convertDate(evt.createdDate) + '</p>';
 
             if (location.city !== ""){
-              secondary_info += '<p class=""> Can I invite others to this event? Yes</p>';
+              secondary_info += '<p> Can I invite others to this event? Yes</p>';
             } else{
-              secondary_info += '<p class=""> Can I invite others to this event? No </p>';
+              secondary_info += '<p> Can I invite others to this event? No </p>';
             }
 
 
@@ -184,7 +185,7 @@ $(document).ready(function(){
         }
         
       }); 
-          // Attending Event
+          // Attending Event-- if they are attending the number count at the top of the page will increase and decrease.
 
           $("input[type=checkbox]").each(function () {
               $(this).change(updateCount);
@@ -208,17 +209,12 @@ $(document).ready(function(){
 
                 if (this.checked){
                   $(this).parents('.main_info').prepend(starImage);
-                  console.log("image attached")
+
                 } else{
                   $(this).parents('.main_info').children('img').remove();
-                  console.log("image remove")
+
 
                 }
-
-
-                // if (true) {};
-
-
             });
 
     }
