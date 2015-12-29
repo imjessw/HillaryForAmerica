@@ -208,8 +208,10 @@ $(document).ready(function(){
 
                 if (this.checked){
                   $(this).parents('.main_info').prepend(starImage);
+                  console.log("image attached")
                 } else{
-                  $(this).parents('.main_info').remove();
+                  $(this).parents('.main_info').children('img').remove();
+                  console.log("image remove")
 
                 }
 
